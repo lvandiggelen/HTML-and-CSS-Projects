@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <header>
+      <h1>Total COVID-19 Cases March 27th, 2019 (Excluding New York)</h1>
+    <p>Hover over each state for more information</p>
+    </header>
+    <title>Total Cases (Excluding New York)</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['metro', 'Total Cases'],
+          ['Alabama', 567],
+          ['Alaska', 69],
+          ['Arizona', 508],
+          ['Arkansas', 335],
+          ['California', 4201],
+          ['Colorado', 1430],
+          ['Connecticut', 1012],
+          ['Delaware', 163],
+          ['Florida', 2900],
+          ['Georgia', 2001],
+          ['Hawaii', 106],
+          ['Idaho', 189],
+          ['Illinois', 2538],
+          ['Indiana', 981],
+          ['Iowa', 180],
+          ['Kansas', 168],
+          ['Kentucky', 248],
+          ['Louisiana', 2305],
+          ['Maine', 168],
+          ['Maryland', 774],
+          ['Massachusetts', 2417],
+          ['Michigan', 2856],
+          ['Minnesota', 398],
+          ['Mississippi', 579],
+          ['Missouri', 502],
+          ['Montana', 108],
+          ['Nebraska', 68],
+          ['Nevada', 535],
+          ['New Hampshire', 158],
+          ['New Jersey', 6876],
+          ['New Mexico', 136],
+        //  ['New York', 44635],
+          ['North Carolina', 829],
+          ['North Dakota', 52],
+          ['Ohio', 867],
+          ['Oklahoma', 322],
+          ['Oregon', 316],
+          ['Pennsylvania', 1718],
+          ['Rhode Island', 165],
+          ['South Carolina', 456],
+          ['South Dakota', 46],
+          ['Tennessee', 1098],
+          ['Texas', 1662],
+          ['Utah', 402],
+          ['Vermont', 158],
+          ['Virginia', 604],
+          ['Washington', 3207],
+          ['West Virginia', 76],
+          ['Wisconsin', 707],
+          ['Wyoming', 70],
+        ]);
+
+        var options = {
+          region: 'US',
+          displayMode: 'regions',
+          resolution: 'provinces',
+          region: 'US',
+          colorAxis: {colors: ['#F3D7D7', 'black', '#F00606']},
+          backgroundColor: '#FCFAFA',
+          datalessRegionColor: '#F3D7D7',
+          defaultColor: '#f5f5f5',
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <link rel = "stylesheet" type = "text/css" href = "Basic_CSS_1.css">
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    <p>Map Color Gradient </p>
+  </body>
+</html>
